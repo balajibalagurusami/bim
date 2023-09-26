@@ -1,0 +1,436 @@
+{
+  "Uuid": "1ada6623-0d03-483f-a1eb-01a5ead0a717",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "QR_Code_PDF_URL",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [
+    {
+      "Id": "a7c522d8d94640d2849b5bc0ee09f99e",
+      "Name": "Watch Image",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Previews an image"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "b27685ef-8843-40e0-91e1-31a1e6c8e0da",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "b256d767fb72497580394a1b0ccf9a2c",
+      "Inputs": [
+        {
+          "Id": "78cd34fd4c534152a5386faee92ecd13",
+          "Name": "str",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "747fe021368b49e18e823e511c8eb2a1",
+          "Name": "QRColor",
+          "Description": "Color\nDefault value : DSCore.Color.ByARGB(255, 0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5c8a3eaef4d449ecadd2bf61071b2fca",
+          "Name": "BackColor",
+          "Description": "Color\nDefault value : DSCore.Color.ByARGB(255, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d796ccc085dd402abf2a5d62980a768c",
+          "Name": "ECCLevel",
+          "Description": "string\nDefault value : \"M - 15%\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "599f9b2b6eab45aaac645f9dc04298be",
+          "Name": "Image",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a simple QR code based on strings. Accepts single items or lists"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"https://ftp.jfag.in/0:/QR/A001_V2.pdf\";",
+      "Id": "357be53bf763442cb1890bd4e6a405ca",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "36efb74b1c284ad7bf85532222c20986",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.WatchImageCore, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a7c522d8d94640d2849b5bc0ee09f99e",
+      "Inputs": [
+        {
+          "Id": "a7b3be4b6b0b45678cbebee4bb8a2db5",
+          "Name": "image",
+          "Description": "Image for visualization",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8845b03f25954db69387588e1ee84dd4",
+          "Name": "image",
+          "Description": "Image for visualization",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Previews an image"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.Image.WriteToFile@string,var",
+      "Id": "7a624f6019cf43cc8a89a781b45b9bab",
+      "Inputs": [
+        {
+          "Id": "c947277d7b8144bc80b368e11face0af",
+          "Name": "path",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e7daa265a2740429ef31e21e3fa98c5",
+          "Name": "image",
+          "Description": "The image to write\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b3027b7bac744f5ab985f9a7323425e8",
+          "Name": "image",
+          "Description": "Created image object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Write the image to a path, given the specified file name.\n\nImage.WriteToFile (path: string, image: var): var"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\bbalaji.INDHT\\Downloads\\QR\\A001_V2.pdf",
+      "InputValue": ".\\A001_V2.pdf",
+      "NodeType": "ExtensionNode",
+      "Id": "f930ead1b1a841caa85a770fdb71fe3f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f85a30a3b034c64a6bf25733e11df96",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\bbalaji.INDHT\\Downloads\\QR\\A001_V2.png",
+      "InputValue": ".\\A001_V2.png",
+      "NodeType": "ExtensionNode",
+      "Id": "503727d172e4455c834bcdd484b39a23",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b7178e074f7741cc951a96afba1f1dc1",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.Image.WriteToFile@string,var",
+      "Id": "c14e174cba004c889d99f95497338cf5",
+      "Inputs": [
+        {
+          "Id": "c92112c5f74b44199fb6ff442ac92d06",
+          "Name": "path",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "71a74f1e991849caba6386ce800baef8",
+          "Name": "image",
+          "Description": "The image to write\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "966a8d7ce02343b4a16f00d18e697c6c",
+          "Name": "image",
+          "Description": "Created image object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Write the image to a path, given the specified file name.\n\nImage.WriteToFile (path: string, image: var): var"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "599f9b2b6eab45aaac645f9dc04298be",
+      "End": "a7b3be4b6b0b45678cbebee4bb8a2db5",
+      "Id": "c6b0595270ea43e59a5e4c4bd9de8770",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "599f9b2b6eab45aaac645f9dc04298be",
+      "End": "1e7daa265a2740429ef31e21e3fa98c5",
+      "Id": "7ecdd869233b467bbeea8516bebe00c8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "599f9b2b6eab45aaac645f9dc04298be",
+      "End": "71a74f1e991849caba6386ce800baef8",
+      "Id": "e6de2546269d41418c5e3aaeb7af255a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "36efb74b1c284ad7bf85532222c20986",
+      "End": "78cd34fd4c534152a5386faee92ecd13",
+      "Id": "aad2982dac6f48ccb947b59d41fe2026",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6f85a30a3b034c64a6bf25733e11df96",
+      "End": "c947277d7b8144bc80b368e11face0af",
+      "Id": "320ca3baca9e4207b6fe5b68ae3b85a9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b7178e074f7741cc951a96afba1f1dc1",
+      "End": "c92112c5f74b44199fb6ff442ac92d06",
+      "Id": "c2be31abe5ba4cf7bc040d511787d8b3",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "b27685ef-8843-40e0-91e1-31a1e6c8e0da"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "QRCoder 0.9.0",
+      "Version": "2016.1.15",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "b256d767fb72497580394a1b0ccf9a2c"
+      ]
+    },
+    {
+      "Name": "A001_V2.pdf",
+      "ReferenceType": "External",
+      "Nodes": [
+        "f930ead1b1a841caa85a770fdb71fe3f"
+      ]
+    },
+    {
+      "Name": "A001_V2.png",
+      "ReferenceType": "External",
+      "Nodes": [
+        "503727d172e4455c834bcdd484b39a23"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.17",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "4.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.17.0.3472",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "QRCode",
+        "ShowGeometry": true,
+        "Id": "b256d767fb72497580394a1b0ccf9a2c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 883.61033511908533,
+        "Y": 744.15754303329857
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "357be53bf763442cb1890bd4e6a405ca",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 386.01033511908531,
+        "Y": 743.98504303329855
+      },
+      {
+        "Name": "Watch Image",
+        "ShowGeometry": true,
+        "Id": "a7c522d8d94640d2849b5bc0ee09f99e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 1282.8103351190853,
+        "Y": 190.15754303329857
+      },
+      {
+        "Name": "Image.WriteToFile",
+        "ShowGeometry": true,
+        "Id": "7a624f6019cf43cc8a89a781b45b9bab",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1282.8103351190853,
+        "Y": 704.15754303329857
+      },
+      {
+        "Name": "File Path",
+        "ShowGeometry": true,
+        "Id": "f930ead1b1a841caa85a770fdb71fe3f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 883.61033511908533,
+        "Y": 587.15754303329857
+      },
+      {
+        "Name": "File Path",
+        "ShowGeometry": true,
+        "Id": "503727d172e4455c834bcdd484b39a23",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 883.61033511908533,
+        "Y": 993.15754303329868
+      },
+      {
+        "Name": "Image.WriteToFile",
+        "ShowGeometry": true,
+        "Id": "c14e174cba004c889d99f95497338cf5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1282.8103351190853,
+        "Y": 882.15754303329857
+      }
+    ],
+    "Annotations": [],
+    "X": -108.50802138273832,
+    "Y": 78.100830598059531,
+    "Zoom": 0.55904665579548085
+  }
+}
