@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Embedded Meeting</title>
-	    <script>
-        // Request camera and microphone permissions
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-            .then(function(stream) {
-                // Permissions granted, you can use the camera and microphone
-                console.log("Camera and microphone permissions granted.");
-            })
-            .catch(function(error) {
-                // Permissions denied or an error occurred
-                console.error("Error accessing camera and microphone:", error);
-            });
-    </script>
-</head>
-<body>
-    <iframe src="https://balaji-videoconf-1253.app.100ms.live/meeting/nxr-vmmc-rvj" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
-</body>
-</html>
+<iframe
+  title="100ms-app"
+  allow="camera *;microphone *;display-capture *"
+  src="https://balaji-videoconf-1253.app.100ms.live/meeting/nxr-vmmc-rvj"
+  style="height: 100vh; width: 100%; border:0;"
+>
+</iframe>
