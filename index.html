@@ -1,62 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Header Example</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Define the header styles */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            transition: top 0.3s;
-        }
-
-        /* Define a placeholder element to prevent content from jumping when the header becomes sticky */
-        .placeholder {
-            height: 60px; /* Adjust this height to match the header's height */
-        }
-
-        /* Add some styles to the content for demonstration purposes */
-        .content {
-            padding: 20px;
-        }
-    </style>
+    <title>Embedded Meeting</title>
+	    <script>
+        // Request camera and microphone permissions
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function(stream) {
+                // Permissions granted, you can use the camera and microphone
+                console.log("Camera and microphone permissions granted.");
+            })
+            .catch(function(error) {
+                // Permissions denied or an error occurred
+                console.error("Error accessing camera and microphone:", error);
+            });
+    </script>
 </head>
 <body>
-    <div class="header">
-        <h1>Sticky Header</h1>
-    </div>
-    <div class="placeholder"></div> <!-- Placeholder to prevent content jumping -->
-    <div class="content">
-        <h2>Scroll down to see the sticky header</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-        <!-- Add more content here -->
-    </div>
-
-    <script>
-        // JavaScript to make the header sticky on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            const placeholder = document.querySelector('.placeholder');
-            const scrollY = window.scrollY;
-
-            if (scrollY > placeholder.offsetTop) {
-                header.style.top = '0';
-            } else {
-                header.style.top = `-${header.offsetHeight}px`;
-            }
-        });
-    </script>
+    <iframe src="https://balaji-videoconf-1253.app.100ms.live/meeting/nxr-vmmc-rvj" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
 </body>
 </html>
