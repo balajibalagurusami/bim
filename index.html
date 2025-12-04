@@ -1,7 +1,95 @@
-<iframe
-  title="100ms-app"
-  allow="camera *;microphone *;display-capture *"
-  src="https://balaji-videoconf-1253.app.100ms.live/meeting/nxr-vmmc-rvj"
-  style="height: 100vh; width: 100%; border:0;"
->
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Meeting</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      background: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .btn:hover {
+      background: #135ec2;
+    }
+
+    #fallbackBox {
+      display: none;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 30px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+      background: #111;
+    }
+
+    iframe {
+      width: 100%;
+      height: 70vh;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 12px 18px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Join the Meeting</h2>
+
+  <!-- Primary link to Google Meet -->
+  <a class="btn" href="https://meet.google.com/qfu-iuqt-ydo" target="_blank">
+    Join via Google Meet
+  </a>
+
+  <!-- Expand fallback -->
+  <button id="toggleBtn">If Google Meet fails, click here</button>
+
+  <!-- Fallback nested iframe -->
+  <div id="fallbackBox">
+    <h3>Alternative Meeting Window</h3>
+    <iframe src="https://meet.balaji.work" allow="camera; microphone; fullscreen"></iframe>
+  </div>
+
+<script>
+  document.getElementById("toggleBtn").onclick = function () {
+    const box = document.getElementById("fallbackBox");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+  };
+</script>
+
+</body>
+</html>
