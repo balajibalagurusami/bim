@@ -75,21 +75,5 @@
     Join via Google Meet
   </a>
 
-  <!-- Expand fallback -->
-  <button id="toggleBtn">If Google Meet fails, click here</button>
-
-  <!-- Fallback nested iframe -->
-  <div id="fallbackBox">
-    <h3>Alternative Meeting Window</h3>
-    <iframe src="https://meet.balaji.work" allow="camera; microphone; fullscreen"></iframe>
-  </div>
-
-<script>
-  document.getElementById("toggleBtn").onclick = function () {
-    const box = document.getElementById("fallbackBox");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-  };
-</script>
-
 </body>
 </html>
